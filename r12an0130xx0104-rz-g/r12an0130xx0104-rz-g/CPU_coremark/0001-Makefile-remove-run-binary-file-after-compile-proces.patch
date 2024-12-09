@@ -1,0 +1,26 @@
+From 0fa1ed69de8c0371e7b92223fa64afbf686d6993 Mon Sep 17 00:00:00 2001
+From: Duan Le <duan.le.xa@renesas.com>
+Date: Fri, 10 Jun 2022 13:17:30 +0700
+Subject: [PATCH] Makefile: remove run binary file after compile process
+ Signed-off-by: Duan Le <duan.le.xa@renesas.com>
+
+---
+ Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Makefile b/Makefile
+index c2db7cc..5054008 100644
+--- a/Makefile
++++ b/Makefile
+@@ -110,7 +110,7 @@ run3.log-PARAM=$(PARAM3) 7 1 1200
+ 
+ run1.log run2.log run3.log: load
+ 	$(MAKE) port_prerun
+-	$(RUN) $(OUTFILE) $($(@)-PARAM) > $(OPATH)$@
++#	$(RUN) $(OUTFILE) $($(@)-PARAM) > $(OPATH)$@
+ 	$(MAKE) port_postrun
+ 	
+ .PHONY: gen_pgo_data
+-- 
+2.7.4
+
